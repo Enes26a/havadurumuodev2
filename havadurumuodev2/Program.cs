@@ -32,7 +32,7 @@ namespace havadurumuodev2
                 Console.WriteLine("İl = Ankara");
                 Console.WriteLine("Sıcaklık = " + ankhavasicaklik + " Hava Durumu = " + ankdurum);
             }
-            if (secim == "2")
+            else if (secim == "2")
             {
                 string apikey = "e4b7070abab1899610fd58316c8d4c53";
                 string link = "https://api.openweathermap.org/data/2.5/weather?qIstanbul&lang=tr&units=metric&mode=xml&appid=" + apikey;
@@ -44,7 +44,7 @@ namespace havadurumuodev2
                 Console.WriteLine("İl = İstanbul");
                 Console.WriteLine("Sıcaklık = " + isthavasicaklik + " Hava Durumu = " + istdurum);
             }
-            if (secim == "3")
+            else if (secim == "3")
             {
                 string apikey = "e4b7070abab1899610fd58316c8d4c53";
                 string link = "https://api.openweathermap.org/data/2.5/weather?q=Eskişehir&lang=tr&units=metric&mode=xml&appid=" + apikey;
@@ -55,6 +55,10 @@ namespace havadurumuodev2
                 string durum = havadurumu.Descendants("weather").ElementAt(0).Attribute("value").Value;
                 Console.WriteLine("İl = Eskişehir");
                 Console.WriteLine("Sıcaklık = " + havasicaklik + " Hava Durumu = " + durum);
+            }
+            else
+            {
+                Console.WriteLine("Yazdığınız sayı uygulama dışıdır.");
             }
 
             #endregion
